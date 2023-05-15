@@ -4,6 +4,7 @@ import {
   StackNavigationOptions,
 } from '@react-navigation/stack';
 import {useAuth} from '../../common/hooks/useAuth';
+import Loader from '../../components/Loader';
 import {StackParamList} from '../../models/navigation';
 import LoginStackNavigator from '../LoginStackNavigator';
 import MainTabNavigator from '../MainTabNavigator';
@@ -15,10 +16,17 @@ const options: Record<string, StackNavigationOptions> = {
   login: {
     headerShown: false,
   },
+  main: {
+    headerShown: false,
+  },
 };
 
 const AppStack = () => {
-  const {user} = useAuth();
+  const {user, initializing} = useAuth();
+
+  if (initializing) {
+    return <Loader />;
+  }
 
   return (
     <Stack.Navigator initialRouteName="LoginStackNavigator">
@@ -26,7 +34,7 @@ const AppStack = () => {
         <Stack.Screen
           name="MainTabNavigator"
           component={MainTabNavigator}
-          options={options.home}
+          options={options.main}
         />
       ) : (
         <Stack.Screen

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import CustomButton from '../../../../components/CustomButton';
 import TextWrapper from '../../../../components/TextWrapper';
@@ -11,10 +11,12 @@ const SettingsScreen: FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TextWrapper style={styles.username} selectable>
-        {user}
-      </TextWrapper>
-      <CustomButton label={'Logout'} onPress={AuthAPI.logout} />
+      <View style={styles.contentContainer}>
+        <TextWrapper style={styles.username} selectable>
+          {user}
+        </TextWrapper>
+        <CustomButton label={'Logout'} onPress={AuthAPI.logout} />
+      </View>
     </SafeAreaView>
   );
 };
