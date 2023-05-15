@@ -3,21 +3,13 @@ import {colors, dimensions, text} from '../../constants';
 
 export const styles = StyleSheet.create({
   button: {
-    width: '100%',
-    backgroundColor: colors.primary,
-    minHeight: 60,
+    width: 40,
+    height: 40,
+    backgroundColor: colors.red,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: dimensions.borderRadius.small,
-    paddingHorizontal: dimensions.offset.large,
-    shadowColor: colors.black,
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
+    paddingHorizontal: dimensions.offset.tiny,
   },
   disabledButton: {
     opacity: 0.3,
@@ -25,5 +17,9 @@ export const styles = StyleSheet.create({
   buttonText: {
     fontSize: text.size.big,
     color: colors.white,
+  },
+  deleteImage: {
+    width: 16,
+    height: 16,
   },
 });

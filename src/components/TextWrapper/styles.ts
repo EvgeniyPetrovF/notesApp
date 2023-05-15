@@ -1,7 +1,9 @@
 import {StyleSheet} from 'react-native';
+import {text} from '../../constants';
+import {scaleFontSize} from '../../utils/scaleStyleValues';
 
 export const styles = StyleSheet.create({
   text: {
-    fontSize: 16,
+    fontSize: scaleFontSize(text.size.middle),
   },
 });
