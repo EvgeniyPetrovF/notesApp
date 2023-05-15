@@ -411,10 +411,10 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
-  - RNFBApp (17.4.3):
+  - RNFBApp (17.5.0):
     - Firebase/CoreOnly (= 10.7.0)
     - React-Core
-  - RNFBAuth (17.4.3):
+  - RNFBAuth (17.5.0):
     - Firebase/Auth (= 10.7.0)
     - React-Core
     - RNFBApp
@@ -682,8 +682,8 @@ SPEC CHECKSUMS:
   ReactCommon: 5307873a227ee34ddd3e7f2ec1086ebbfccc7618
   RNBootSplash: 91e0c16bfc96703cb5b0562785b9a8cbfeb298fe
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
-  RNFBApp: 922564a99c97a8cab366d5a918f9fecff6b563d5
-  RNFBAuth: 55fd07310abde3fa2f3a6568f6d3ef590383d241
+  RNFBApp: d59efa0872fff4e27de03cca3c528c203a436ae5
+  RNFBAuth: 54e598bb1358a0cf6c0a187f43161cd1bde90455
   RNFBDatabase: 80c4a872443796fff15e75f476e0c4b793a9cede
   RNGestureHandler: 071d7a9ad81e8b83fe7663b303d132406a7d8f39
   RNImageCropPicker: 14fe1c29298fb4018f3186f455c475ab107da332

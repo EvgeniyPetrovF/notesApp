@@ -7,7 +7,7 @@ const useNotes = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
-  const [tempNote, setTempNote] = useState<INote | null>();
+  const [tempNote, setTempNote] = useState<INote | null>(null);
   const [notes, setNotes] = useState<INote[]>([]);
 
   const fetchNotes = async () => {
@@ -49,7 +49,7 @@ const useNotes = () => {
   const deleteNote = async (id: number) => {
     try {
       await DatabaseAPI.removeNote(id);
-      setNotes(prev => prev.filter(cleaner => cleaner.id !== id));
+      setNotes(notes.filter(cleaner => cleaner.id !== id));
     } catch (error) {
       console.log((error as Error).message);
     }
@@ -60,8 +60,8 @@ const useNotes = () => {
     try {
       await DatabaseAPI.updateNote(updatedNote);
 
-      setNotes(prev =>
-        prev.map(note => (note.id === updatedNote.id ? updatedNote : note)),
+      setNotes(
+        notes.map(note => (note.id === updatedNote.id ? updatedNote : note)),
       );
     } catch (error) {
       console.log((error as Error).message);

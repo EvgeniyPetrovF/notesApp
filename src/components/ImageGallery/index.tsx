@@ -28,9 +28,9 @@ const ImageGallery = ({
   imageStyleContainer,
   onAddPress,
 }: ImageGalleryProps) => {
-  const isLimitReached = !limit || limit > images?.length;
+  const canAddMoreImages = !limit || limit > images?.length;
 
-  const showAddButton = onAddPress && isLimitReached;
+  const showAddButton = onAddPress && canAddMoreImages;
 
   return (
     <View>

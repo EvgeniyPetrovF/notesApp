@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {View} from 'react-native';
-import {format, parseISO} from 'date-fns';
+import dayjs from 'dayjs';
 import CloseButton from '../../../../components/CloseButton';
 import ImageGallery from '../../../../components/ImageGallery';
 import MarkdownWrapper from '../../../../components/MarkdownWrapper';
@@ -23,7 +23,7 @@ const Note: FC<INote & Props> = ({
     <View style={styles.container}>
       <View style={styles.header}>
         <TextWrapper style={styles.name}>
-          Date: {format(parseISO(creationDate), 'HH:mm, dd/MM/yyyy')}
+          Date: {dayjs(creationDate).format('HH:mm, DD/MM/YYYY')}
         </TextWrapper>
       </View>
       {noteText && (

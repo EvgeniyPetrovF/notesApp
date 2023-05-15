@@ -53,6 +53,7 @@ const HomeScreen: FC<Props> = () => {
     openAddModal,
     closeEditModal,
   } = useNotes();
+  const {animatedOpacityStyle} = useAnimatedList({isLoading});
 
   const renderNote: ListRenderItem<INote> = ({item}) => {
     return (
@@ -69,8 +70,6 @@ const HomeScreen: FC<Props> = () => {
       </View>
     );
   }, [openAddModal]);
-
-  const {animatedOpacityStyle} = useAnimatedList({isLoading});
 
   return (
     <SafeAreaView style={styles.container}>
